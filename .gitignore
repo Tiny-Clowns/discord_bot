@@ -1,3 +1,7 @@
+# The discord token in token.txt
+token.txt
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
