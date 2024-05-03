@@ -23,7 +23,8 @@ bot = commands.Bot(intents=discord.Intents.all(), command_prefix=COMMAND_PREFIX)
 
 @bot.command()
 async def ping(ctx):
-    await ctx.send("Pong!")
+    await ctx.send(f"Pong!\nLatency: {bot.latency}")
+
 
 @bot.event
 async def on_command_error(ctx, error):
