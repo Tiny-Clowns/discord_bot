@@ -6,10 +6,8 @@ class Management(commands.Cog):
 
     @commands.command()
     async def clear(self, ctx, quantity: int):
-
         if ((0<quantity) and (quantity<101)):
             messages = await ctx.channel.purge(limit=quantity+1)
-
             await ctx.send(f"Cleared {len(messages)-1} messages", delete_after=3)
 
         else:
