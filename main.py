@@ -7,7 +7,7 @@ import asyncio
 
 
 # The discord command prefix is !
-COMMAND_PREFIX = "$"
+COMMAND_PREFIX = "!"
     
 
 async def main():
