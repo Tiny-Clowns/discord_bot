@@ -4,7 +4,7 @@ This project is an open-source initiative aimed at providing fundamental managem
 
 
 ## Table of Contents
-- [Functionalities](#Functionalities)
+- [Functionalities](#functionalities)
 - [Installation](#installation)
 - [Local run](#local-run)
 - [Build docker image](#build-docker-image)
