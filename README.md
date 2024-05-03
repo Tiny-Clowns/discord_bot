@@ -67,11 +67,11 @@ Pre-requirements: python 3.10 isntalled
 
 
 ## Build docker image
-    Example coming soon
+Example coming soon
 
 
 ## Deploy on minikube
-    Example coming soon
+Example coming soon
 
 
 
