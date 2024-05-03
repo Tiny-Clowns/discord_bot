@@ -12,15 +12,15 @@ class Common(commands.Cog):
     @commands.Cog.listener()
     async def on_command_error(self, ctx, error):
         if isinstance(error, commands.CommandNotFound):
-            await ctx.send("Sorry, {ctx.author.mention} Command not found.")
+            await ctx.send(f"Sorry, {ctx.author.mention} Command not found.")
         elif isinstance(error, commands.MissingRequiredArgument):
-            await ctx.send("Sorry, {ctx.author.mention} you provided missing required arguments.")
+            await ctx.send(f"Sorry, {ctx.author.mention} you provided missing required arguments.")
         elif isinstance(error, commands.BadArgument):
-            await ctx.send("Sorry, {ctx.author.mention} you provided a bad argument.")
+            await ctx.send(f"Sorry, {ctx.author.mention} you provided a bad argument.")
         elif isinstance(error, commands.MissingPermissions):
             await ctx.send(f"Sorry, {ctx.author.mention} you do not have the permissions to do that.")
         elif isinstance(error, commands.MissingRole):
-            await ctx.send("Sorry, {ctx.author.mention} you do not have the role to do that.")
+            await ctx.send(f"Sorry, {ctx.author.mention} you do not have the role to do that.")
         else:
             await ctx.send("An error occurred.\n" + str(error))
 
