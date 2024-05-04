@@ -1,5 +1,6 @@
 from discord.ext import commands
 from discord import Embed, Color
+import datetime
 
 class Common(commands.Cog):   
     def __init__(self, bot):
@@ -9,6 +10,15 @@ class Common(commands.Cog):
     async def ping(self, ctx):
         embed=Embed(title="Pong!", color=Color.blue())
         embed.add_field(name="Latency", value=f"{round(self.bot.latency*1000, 2)} ms", inline=False)
+
+        await ctx.send(embed=embed)
+
+    @commands.command()
+    async def status(self, ctx):
+        embed=Embed(title="Bot status", color=Color.blue())
+        embed.add_field(name="Latency", value=f"{round(self.bot.latency*1000, 2)} ms", inline=False)
+        embed.add_field(name="Run time", value=datetime.datetime.now()-self.bot.start_time, inline=False)
+        embed.add_field(name="Serving", value=f"{(len(self.bot.guilds))} servers", inline=False)
 
         await ctx.send(embed=embed)
 
