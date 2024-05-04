@@ -9,15 +9,14 @@ This project is an open-source initiative aimed at providing fundamental managem
 - [Local run](#local-run)
 - [Build docker image](#build-docker-image)
 - [Deploy on minikube](#deploy-on-minikube)
-
+- [Future roadmap](#future-roadmap)
 
 ## Functionalities
 
 ### Key functionaltiies
-- Coming soon
-
-### Additional functionalities
-- Coming soon
+- Clear messages.
+- Kick & ban members.
+- Split & move team members to their corresponding team voice channel.
 
 
 ## Installation
@@ -47,7 +46,7 @@ Pre-requirements: python 3.10 isntalled
     ```
 
 
-3. Install the required dependencies:
+3. Install dependecies using terminal
 
     ```bash
     pip install -r requirements.txt
@@ -56,15 +55,14 @@ Pre-requirements: python 3.10 isntalled
 
 ## Local run
 
-1. Add your discord developer token into the token.txt
+1. Put your discord developer token into the token.txt
 
+2. Run program using terminal
 
-2. Run the program using terminal
-
-    ```python
+    ```bash
     python main.py
     ```
-
+    
 
 ## Build docker image
 Example coming soon
@@ -73,5 +71,7 @@ Example coming soon
 ## Deploy on minikube
 Example coming soon
 
-
-
+## Future Roadmap
+- Play audio
+- Create poll
+- And more!
