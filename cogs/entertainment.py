@@ -2,9 +2,12 @@ from discord.ext import commands
 from discord.utils import get
 import random
 
+
 class Entertainment(commands.Cog):   
+
     def __init__(self, bot):
         self.bot=bot
+        
     
     @commands.command()
     async def random_teams(self, ctx, team_quantity: int, *names):
@@ -29,7 +32,7 @@ class Entertainment(commands.Cog):
     @commands.has_permissions(administrator=True)
     async def split(self, ctx):
         if (ctx.author.voice==None):
-            await ctx.send(f"Sorry, {ctx.author.mention} you have not joined any voice channels yet.")
+            await ctx.send(f"Sorry, {ctx.author.mention} you have not joined any voice channels in this server yet.")
             return
         
         current_voice_channel = ctx.author.voice.channel
