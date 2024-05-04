@@ -26,18 +26,26 @@ class Entertainment(commands.Cog):
             await ctx.send(f"Team {i}: {', '.join(team)}")
 
     @commands.command()
-    @commands.has_permissions(move_members=True)
+    @commands.has_permissions(administrator=True)
     async def split(self, ctx):
+        if (ctx.author.voice==None):
+            await ctx.send(f"Sorry, {ctx.author.mention} you have not joined any voice channels yet.")
+            return
+        
         current_voice_channel = ctx.author.voice.channel
 
         new_channel_1 = get(ctx.guild.voice_channels, name="Team 1")
         new_channel_2 = get(ctx.guild.voice_channels, name="Team 2")
+        category = get(ctx.guild.categories, name="Split team")
+
+        if not category:
+            category = await ctx.guild.create_category("Split team")
 
         if not new_channel_1:
-            new_channel_1 = await ctx.guild.create_voice_channel(name="Team 1")
+            new_channel_1 = await ctx.guild.create_voice_channel(name="Team 1", category=category)
 
         if not new_channel_2:
-            new_channel_2 = await ctx.guild.create_voice_channel(name="Team 2")
+            new_channel_2 = await ctx.guild.create_voice_channel(name="Team 2", category=category)
 
         # Get a list of members in the source channel
         members = [member.id for member in current_voice_channel.members]
