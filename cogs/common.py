@@ -1,4 +1,5 @@
 from discord.ext import commands
+from discord import Embed, Color
 
 class Common(commands.Cog):   
     def __init__(self, bot):
@@ -6,7 +7,10 @@ class Common(commands.Cog):
     
     @commands.command()
     async def ping(self, ctx):
-        await ctx.send(f"Pong!\nLatency: {self.bot.latency}")
+        embed=Embed(title="Pong!", color=Color.blue())
+        embed.add_field(name="Latency", value=f"{round(self.bot.latency*1000, 2)} ms", inline=False)
+
+        await ctx.send(embed=embed)
 
 
     @commands.Cog.listener()
@@ -18,7 +22,7 @@ class Common(commands.Cog):
         elif isinstance(error, commands.BadArgument):
             await ctx.send(f"Sorry, {ctx.author.mention} you provided a bad argument.")
         elif isinstance(error, commands.MissingPermissions):
-            await ctx.send(f"Sorry, {ctx.author.mention} you do not have the permissions to do that.")
+            await ctx.send(f"Sorry, {ctx.author.mention} you do not have the permission to do that.")
         elif isinstance(error, commands.MissingRole):
             await ctx.send(f"Sorry, {ctx.author.mention} you do not have the role to do that.")
         else:
