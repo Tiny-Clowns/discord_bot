@@ -3,7 +3,7 @@ from discord.ext import commands
 from utility import read_token
 import os
 import asyncio
-
+import datetime
 
 
 # The discord command prefix is !
@@ -18,6 +18,9 @@ async def main():
         if filename.endswith(".py"):
             await bot.load_extension(f"cogs.{filename[:-3]}")
             print(f"Loaded {filename}")
+
+
+    bot.start_time=datetime.datetime.now()
 
     await bot.start(read_token())
 
