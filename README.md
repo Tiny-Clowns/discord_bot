@@ -72,6 +72,6 @@ Example coming soon
 Example coming soon
 
 ## Future Roadmap
-- Play audio
 - Create poll
+- Mini games
 - And more!

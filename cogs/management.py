@@ -27,7 +27,7 @@ class Management(commands.Cog):
             embed.add_field(name="Requested by", value=f"{ctx.author.mention}", inline=False)
             await ctx.send(embed=embed)
 
-
+ 
     @commands.command()
     @commands.has_permissions(kick_members=True)
     async def kick(self, ctx, member: Member):
